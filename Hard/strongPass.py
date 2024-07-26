@@ -1,51 +1,29 @@
 password = input("Enter the password: ")
 
-def lengthCheck(password):
-    if len(password)<6 or len(password)>20:
-        return False
-    return True
+def moves_to_make_strong(password):
+    missing_type = 3
+    if any('a' <= c <= 'z' for c in password):
+        missing_type -= 1
+    if any('A' <= c <= 'Z' for c in password):
+        missing_type -= 1
+    if any(c.isdigit() for c in password):
+        missing_type -= 1
 
-def character_check(password):
-    containLowerCase = False
-    containUpperCase = False
-    for i in password:
-        if 97 <= ord(i) <= 122:
-            containLowerCase = True
-        if 65 <= ord(i) <= 90:
-            containUpperCase = True
-    if not containLowerCase or not containUpperCase:
-        return False
-    return True
+    if len(password) < 6:
+        return max(missing_type, 6 - len(password))
+    elif len(password) > 20:
+        return len(password) - 20 + missing_type
+    else:
+        repeat = 0
+        for i in range(len(password) - 2):
+            if password[i] == password[i + 1] == password[i + 2]:
+                repeat += 1
+        return max(missing_type, repeat)
 
-def do_not_contain_3row(password):
-     for i in range(len(password)-2):
-        curr_window = password[i:i+3]
-        if curr_window.count(curr_window[0]) == len(curr_window):
-            flag = False
-     return flag
+print(moves_to_make_strong(password))
 
-def isStrong(password):
-    flag = True
+        
 
-    # password length check
-    flag = lengthCheck(password)
-
-    # charcter check
-    flag = character_check(password)
-
-    # do not contain 3 character in a row check 
-    flag = do_not_contain_3row(password)
-
-    return flag
-
-if isStrong(password):
-    print(0)
-else:
-    if not lengthCheck(password):
-        current_length = len(password)
-        if current_length < 6:
-            remaining_character_needed = 6 - current_length
-            
 
     
 
