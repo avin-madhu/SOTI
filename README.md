@@ -1,4 +1,4 @@
-# SOTI-
+# SOTI
 
 ### Easy Problems
 
@@ -68,3 +68,6 @@ Input: n = 1
 Output: "1"
 
 [Answer](Medium/count_and_say.py)
+
+### Hard Problems
+
