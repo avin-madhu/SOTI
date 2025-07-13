@@ -1,5 +1,7 @@
 # SOTI
 
+please do give a STAR ⭐ 
+
 ### Easy Problems
 
 1. Get a string as input, check its palindrome or not, without using string handling functions.
