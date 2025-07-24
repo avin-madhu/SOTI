@@ -1,6 +1,6 @@
 # SOTI
 
-please do give this repo a STAR ⭐ 
+please do give this repo a STAR⭐ GUYSS!!! 
 
 ### Easy Problems
 
